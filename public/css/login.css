@@ -1,0 +1,100 @@
+/* File: public/css/login.css */
+
+/* Animasi Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* General Body Styling */
+body {
+    background-color: #f8f9fa; /* Latar belakang netral */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Container Styling with Gradient Frame */
+.container {
+    background: linear-gradient(135deg, #03a4ed, #fe3f40); /* Warna frame gradien */
+    padding: 5px; /* Memberi ruang untuk frame */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek floating */
+    animation: fadeIn 1.2s ease-out;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Inner Content with White Background */
+.container > div {
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 10px;
+}
+
+/* Form Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #495057;
+    font-weight: bold;
+}
+
+/* Form Labels */
+label {
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Form Inputs */
+input.form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+    background-color: #ffffff;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Error Alerts */
+.alert {
+    font-size: 0.9rem;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Submit Button */
+button.btn-primary {
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 91, 187, 0.3);
+}
