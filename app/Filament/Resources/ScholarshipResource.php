@@ -36,11 +36,6 @@ class ScholarshipResource extends Resource
                     ->afterStateUpdated(function ($state, callable $set) {
                         $set('slug', Str::slug($state));
                     }),
-
-                TextInput::make('slug')
-                    ->label('Slug')
-                    ->required()
-                    ->disabled(), 
                 TextInput::make('description')
                     ->label('Deskripsi')
                     ->required(),
@@ -48,6 +43,10 @@ class ScholarshipResource extends Resource
                     ->label('Jumlah Beasiswa')
                     ->numeric() 
                     ->required(),
+                Forms\Components\Select::make('organizer_id')
+                ->relationship('organizer', 'name')
+                ->label('Penyelenggara')
+                ->nullable(),
             ]),
             
         ]);
@@ -60,6 +59,7 @@ class ScholarshipResource extends Resource
                 TextColumn::make('id')->label('ID')->sortable(),
                 TextColumn::make('name')->label('Nama Beasiswa')->sortable(),
                 TextColumn::make('amount')->label('Jumlah Beasiswa')->sortable(),
+                TextColumn::make('organizer.name')->label('Penyelenggara')->sortable(),
                 TextColumn::make('created_at')->label('Dibuat Pada')->dateTime()->sortable()
             ])
             ->filters([
