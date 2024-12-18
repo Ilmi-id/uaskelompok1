@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name'); 
             $table->string('type'); 
             $table->integer('amount'); 
-            $table->integer('organizer_id');
+            $table->unsignedBigInteger('organizer_id');
             $table->timestamps();
         });
     }
