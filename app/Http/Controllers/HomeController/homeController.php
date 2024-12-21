@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organizer;
 use App\Models\Scholarship;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -14,10 +15,10 @@ class homeController extends Controller
      */
     public function index()
     {
-        $scholarships = Scholarship::all();
+        $organizers = Organizer::all();
         $students = Student::all();
         return view('Beranda.index', [
-            'scholarships' => $scholarships,
+            'organizers' => $organizers,
             'students'=>$students
         ]);
 

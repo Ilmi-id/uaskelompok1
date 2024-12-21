@@ -20,13 +20,6 @@
     <link rel="stylesheet" href="assets/css/templatemo-space-dynamic.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
-<!--
-    
-TemplateMo 562 Space Dynamic
-
-https://templatemo.com/tm-562-space-dynamic
-
--->
   </head>
 
 <body>
@@ -100,66 +93,27 @@ https://templatemo.com/tm-562-space-dynamic
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <h2>Temukan <em>Program Beasiswa</em> &amp; Layanan yang <span>Kami Tawarkan</span></h2>
+            <h2>Temukan <em>Program Beasiswa</em>  yang <span>Kami Tampilkan </span></h2>
           </div>
         </div>
       </div>
       <div class="row">
+        @foreach ($organizers->take(8) as $organizer )
         <div class="col-lg-3 col-sm-6">
           <a href="#">
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
               <div class="hidden-content">
-                <h4>SEO Analysis</h4>
-                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
+                <h4>{{ $organizer->name }}</h4>
+                <p>{{ $organizer->address}}</p>
               </div>
               <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
+                {{-- @dd($student->photo) --}}
+                  <img src={{ asset('storage/'.$organizer->photo )}} alt="">
               </div>
-            </div>
+            </div>  
           </a>
         </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-              <div class="hidden-content">
-                <h4>Website Reporting</h4>
-                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-              </div>
-              <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-              <div class="hidden-content">
-                <h4>Performance Tests</h4>
-                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-              </div>
-              <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="hidden-content">
-                <h4>Data Analysis</h4>
-                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-              </div>
-              <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+        @endforeach
 
   <div id="blog" class="our-blog section">
     <div class="container">
